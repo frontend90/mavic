@@ -1,0 +1,65 @@
+@font-face 
+  font-family: 'fa-solid-900'
+  src: url('../fonts/fa-solid-900.ttf')
+@mixin solid
+  font-family: 'fa-solid-900'
+@font-face 
+  font-family: 'fa-brands-400'
+  src: url('../fonts/fa-brands-400.ttf')
+@mixin brand
+  font-family: 'fa-brands-400'
+@font-face 
+  font-family: 'fa-light-300'
+  src: url('../fonts/fa-light-300.ttf')
+@mixin light
+  font-family: 'fa-light-300'
+@font-face 
+  font-family: 'fa-regular-400'
+  src: url('../fonts/fa-regular-400.ttf')
+@mixin reg 
+  font-family: 'fa-regular-400'
+@font-face 
+  font-family: 'SF_Pro_Display-Regular'
+  src: url('../fonts/SF_Pro_Display-Regular.ttf')
+@mixin dis_reg 
+  font-family: 'SF_Pro_Display-Regular'
+@font-face 
+  font-family: 'SF_Pro_Display-Semibold'
+  src: url('../fonts/SF_Pro_Display-Semibold.ttf')
+@mixin dis_semi 
+  font-family: 'SF_Pro_Display-Semibold'
+@font-face 
+  font-family: 'Ubuntu-Bold'
+  src: url('../fonts/Ubuntu-Bold.ttf')
+@mixin ub_bold 
+  font-family: 'Ubuntu-Bold'
+@font-face 
+  font-family: 'Ubuntu-Light'
+  src: url('../fonts/Ubuntu-Light.ttf')
+@mixin ub_light 
+  font-family: 'Ubuntu-Light'
+@font-face 
+  font-family: 'Ubuntu-Medium'
+  src: url('../fonts/Ubuntu-Medium.ttf')
+@mixin ub_med 
+  font-family: 'Ubuntu-Medium'
+body 
+  +ub_light 
+  font-size: 15px 
+  color: #ffffff
+.container 
+  max-width: 1230px 
+  padding: 0 15px 
+  margin: auto
+  height: 100%
+.container-menu
+  max-width: 1270px
+  padding: 0 15px
+  margin: auto
+  height: 100%
+h1, h2, h3, h4, h5, h6
+  +dis_reg 
+.fas
+  +solid 
+.fab
+  +brand 

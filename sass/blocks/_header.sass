@@ -1,0 +1,142 @@
+.header
+  background: url(../img/header/bg.png) no-repeat 
+  background-size: cover 
+  background-position: center 
+  height: 100vh 
+  & .top-header
+    padding-top: 40px 
+    position: fixed 
+    top: 0 
+    left: 0
+    width: 100%
+    z-index: 10
+    & .nav 
+      display: grid 
+      grid-template-columns: 190px 1fr 250px
+      align-items: center
+      justify-content: space-between
+      & .logo 
+        & a 
+          display: grid 
+          grid-template-columns: min-content min-content
+          align-items: center
+          color: #ffffff
+          & img 
+            object-fit: cover 
+          & h3 
+            white-space: nowrap
+            text-transform: uppercase
+            +ub_med 
+            font-size: 18px 
+            letter-spacing: .04em
+            margin-left: 10px 
+      & .menu 
+        justify-self: center
+        & .burger 
+          display: none 
+        & .main-menu 
+          & a 
+            color: #ffffff
+            display: inline-block
+            +ub_med 
+            margin-left: 20px 
+            position: relative
+            &::before
+              content: ''
+              position: absolute
+              bottom: -3px
+              left: 0
+              width: 0
+              height: 2px 
+              background: #ffffff
+              transition: .3s linear 
+            &:hover::before 
+              width: 50%
+            &:first-of-type
+              margin-left: 0
+      & .buy 
+        justify-self: end 
+        & button 
+          color: #ffffff
+          width: 115px 
+          height: 30px 
+          border: 1px solid #ffffff
+          border-radius: 3px 
+          +ub_med 
+          position: relative
+          overflow: hidden
+          z-index: 1
+          &:hover
+            color: #1C1C1C
+            font-size: 14px 
+            +ub_bold 
+            letter-spacing: .03em
+          &:hover::before 
+            transform: translateX(0)
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: #ffffff
+            transition: .3s linear 
+            transform: translateX(-100%)
+            z-index: -1
+        & a 
+          display: inline-block
+          margin-left: 10px 
+          color: #ffffff
+          +ub_bold 
+  & .header-title
+    display: grid 
+    align-content: center
+    height: 100%
+    text-align: center
+    & h2 
+      +dis_semi 
+      font-size: 96px 
+    & .img
+      margin-top: 25px 
+      & img 
+        width: 100%
+        object-fit: cover 
+    & p 
+      margin: 25px auto 0  
+      font-size: 17px 
+      line-height: 150%
+      max-width: 325px 
+    & .social 
+      margin-top: 35px 
+      & a 
+        display: inline-block
+        margin-left: 50px 
+        &:first-of-type
+          margin-left: 0
+        & .fab 
+          width: 40px 
+          height: 40px 
+          background: rgba(#ffffff,.5)
+          display: grid 
+          align-items: center
+          justify-content: center
+          border-radius: 50%
+          font-size: 18px 
+          color: #1C1C1C
+          transition: .3s linear 
+          &:hover
+            background: #ffffff
+    & .scroll
+      position: absolute
+      bottom: 40px 
+      left: 50%
+      animation: scroll 2s infinite
+@keyframes scroll
+  0%
+    transform: translate(-50%, -50px)
+    opacity: 0
+  100%
+    transform: translate(-50%, 0)
+    opacity: 1
+
