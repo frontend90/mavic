@@ -43,6 +43,8 @@
   src: url('../fonts/Ubuntu-Medium.ttf')
 @mixin ub_med 
   font-family: 'Ubuntu-Medium'
+html 
+  scroll-behavior: smooth
 body 
   +ub_light 
   font-size: 15px 
@@ -63,3 +65,16 @@ h1, h2, h3, h4, h5, h6
   +solid 
 .fab
   +brand 
+.scroll
+  position: absolute
+  bottom: 40px 
+  left: 50%
+  transform: translateX(-50%)
+  animation: scroll 2s infinite
+@keyframes scroll
+  0%
+    transform: translate(-50%, -50px)
+    opacity: 0
+  100%
+    transform: translate(-50%, 0)
+    opacity: 1

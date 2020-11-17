@@ -43,6 +43,10 @@
   src: url("../fonts/Ubuntu-Medium.ttf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Ubuntu-Light';
   font-size: 15px;
@@ -75,11 +79,60 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'fa-brands-400';
 }
 
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: scroll 2s infinite;
+          animation: scroll 2s infinite;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: translate(-50%, -50px);
+            transform: translate(-50%, -50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translate(-50%, -50px);
+            transform: translate(-50%, -50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
 .header {
   background: url(../img/header/bg.png) no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+  opacity: 0.4;
+  z-index: 0;
 }
 
 .header .top-header {
@@ -225,6 +278,8 @@ h1, h2, h3, h4, h5, h6 {
       align-content: center;
   height: 100%;
   text-align: center;
+  position: relative;
+  z-index: 5;
 }
 
 .header .header-title h2 {
@@ -262,10 +317,138 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 0;
 }
 
-.header .header-title .social a .fab {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.5);
+.header .header-title .social a svg {
+  fill-opacity: .5;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
+.header .header-title .social a svg:hover {
+  fill-opacity: 1;
+}
+
+.about {
+  background: url(../img/about/bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 30px 50px 25px;
+  height: 100vh;
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(107.54deg, rgba(23, 26, 28, 0.72) 0%, #5E5E57 100%);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.about .about-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 465px 580px;
+      grid-template-columns: 465px 580px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  z-index: 5;
+}
+
+.about .about-wrap .content h3 {
+  font-size: 44px;
+  margin-bottom: 55px;
+}
+
+.about .about-wrap .content p {
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 150%;
+}
+
+.about .about-wrap .content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about .about-wrap .about-slider-wrap {
+  margin-top: 200px;
+  position: relative;
+}
+
+.about .about-wrap .about-slider-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 564px;
+  height: 280px;
+  border: 4px solid #ffffff;
+}
+
+.about .about-wrap .about-slider-wrap h4 {
+  font-family: 'Ubuntu-Medium';
+  font-size: 24px;
+  line-height: 28px;
+  width: 285px;
+  text-align: right;
+  position: absolute;
+  top: 230px;
+  right: 545px;
+  z-index: 10;
+}
+
+.about .about-wrap .about-slider-wrap .about-slider {
+  margin-top: 15px;
+  margin-right: 17px;
+}
+
+.about .about-wrap .about-slider-wrap .about-slider .slick-list {
+  overflow: hidden;
+}
+
+.about .about-wrap .about-slider-wrap .about-slider .slick-list .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about .about-wrap .about-slider-wrap .about-slider .slick-list .slick-track .about-slider-block img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about .about-wrap .about-slider-wrap button {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content min-content;
+      grid-template-columns: -webkit-min-content -webkit-min-content;
+      grid-template-columns: min-content min-content;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  width: 100%;
+  padding-right: 17px;
+}
+
+.about .about-wrap .about-slider-wrap button svg {
+  stroke: #ffffff;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+}
+
+.about .about-wrap .about-slider-wrap .about-arrows-left, .about .about-wrap .about-slider-wrap .about-arrows-right {
+  width: 60px;
+  height: 50px;
+  background: #1C1C1C;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -274,49 +457,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 50%;
-  font-size: 18px;
-  color: #1C1C1C;
-  -webkit-transition: .3s linear;
-  transition: .3s linear;
 }
 
-.header .header-title .social a .fab:hover {
+.about .about-wrap .about-slider-wrap .about-arrows-left:hover, .about .about-wrap .about-slider-wrap .about-arrows-right:hover {
   background: #ffffff;
 }
 
-.header .header-title .scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  -webkit-animation: scroll 2s infinite;
-          animation: scroll 2s infinite;
-}
-
-@-webkit-keyframes scroll {
-  0% {
-    -webkit-transform: translate(-50%, -50px);
-            transform: translate(-50%, -50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes scroll {
-  0% {
-    -webkit-transform: translate(-50%, -50px);
-            transform: translate(-50%, -50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    opacity: 1;
-  }
+.about .about-wrap .about-slider-wrap .about-arrows-left:hover svg, .about .about-wrap .about-slider-wrap .about-arrows-right:hover svg {
+  stroke: #000000;
 }
 
 @media screen and (max-width: 1100px) {

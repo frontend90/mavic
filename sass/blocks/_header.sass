@@ -3,6 +3,17 @@
   background-size: cover 
   background-position: center 
   height: 100vh 
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%)
+    opacity: 0.4
+    z-index: 0
   & .top-header
     padding-top: 40px 
     position: fixed 
@@ -94,6 +105,8 @@
     align-content: center
     height: 100%
     text-align: center
+    position: relative
+    z-index: 5
     & h2 
       +dis_semi 
       font-size: 96px 
@@ -114,29 +127,9 @@
         margin-left: 50px 
         &:first-of-type
           margin-left: 0
-        & .fab 
-          width: 40px 
-          height: 40px 
-          background: rgba(#ffffff,.5)
-          display: grid 
-          align-items: center
-          justify-content: center
-          border-radius: 50%
-          font-size: 18px 
-          color: #1C1C1C
+        & svg 
+          fill-opacity: .5
           transition: .3s linear 
           &:hover
-            background: #ffffff
-    & .scroll
-      position: absolute
-      bottom: 40px 
-      left: 50%
-      animation: scroll 2s infinite
-@keyframes scroll
-  0%
-    transform: translate(-50%, -50px)
-    opacity: 0
-  100%
-    transform: translate(-50%, 0)
-    opacity: 1
+            fill-opacity: 1
 

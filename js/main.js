@@ -41,3 +41,21 @@ function adaptive_function() {
   adaptive_header(w, h);
 }
 adaptive_function();
+
+/*************       about  slick       ************/
+$('.about-slider').slick({
+  prevArrow: $('.about-arrows-left'),
+  nextArrow: $('.about-arrows-right'),
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  infinite: true,
+  dots: false,
+  autoplay: true,
+  speed: 1500,
+  responsive: [{
+    breakpoint: 661,
+    settings: {
+      arrows: false
+    }
+  }]
+});
