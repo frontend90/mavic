@@ -51,11 +51,5 @@ $('.about-slider').slick({
   infinite: true,
   dots: false,
   autoplay: true,
-  speed: 1500,
-  responsive: [{
-    breakpoint: 661,
-    settings: {
-      arrows: false
-    }
-  }]
+  speed: 1500
 });
