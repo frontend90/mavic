@@ -53,3 +53,15 @@ $('.about-slider').slick({
   autoplay: true,
   speed: 1500
 });
+
+/************  accordion    ******************/
+$('.block').click(function () {
+  $('.block').removeClass('open');
+  $(this).toggleClass('open');
+});
+
+document.documentElement.addEventListener("click", function (e) {
+  if (!e.target.closest('.block')) {
+    $('.block').removeClass('open');
+  }
+});

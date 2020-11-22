@@ -1,3 +1,8 @@
+@media screen and ( max-width: 1240px )
+  .contacts 
+    & .footer 
+      width: 100%
+      padding-right: 15px 
 @media screen and ( max-width: 1200px )
   .about
     & .about-wrap
@@ -11,6 +16,16 @@
           text-align: center
           top: -100px
           right: 0
+  .features
+    & .features-wrap
+      & .block 
+        &::before
+          display: none  
+@media screen and ( max-width: 1130px )
+  .questions
+    & .questions-wrap
+      &::before
+        display: none 
 @media screen and ( max-width: 1100px )
   .header 
     & .top-header
@@ -127,6 +142,30 @@
           margin: 0
         &::before
           display: none 
+@media screen and ( max-width: 1000px )
+  .contacts 
+    & .contact-wrap
+      grid-template-columns: 1fr 
+      grid-row-gap: 50px
+      & .form 
+        max-width: 570px
+      & .social 
+        margin-top: 0
+        & a 
+          margin-bottom: 0
+          margin-left: 30px 
+          &:first-of-type
+            margin-left: 0
+@media screen and ( max-width: 800px )
+  .questions
+    & .questions-wrap
+      & .block 
+        & .block-wrap 
+          grid-template-columns: 1fr
+          & .block-btn 
+            display: none 
+        & .block-content 
+          max-width: 100%
 @media screen and ( max-width: 700px )
   .about
     & .about-wrap
@@ -139,6 +178,41 @@
           margin: 0
         & button 
           padding-right: 0
+  .features
+    & .title 
+      & h4 
+        font-size: 30px
+    & .features-wrap
+      grid-template-columns: 1fr 
+      grid-row-gap: 50px 
+      margin-left: 0
+      &::before
+        display: none 
+      & .block 
+        max-width: 100%
+        &:nth-child(2)
+          justify-self: start 
+        &:nth-child(4)
+          justify-self: start 
+@media screen and ( max-width: 650px )
+  .questions
+    & .questions-wrap
+      & .block 
+        &.open .block-content 
+          padding: 20px
+        & .block-wrap 
+          & .block-title 
+            padding-left: 15px
+            & h5 
+              font-size: 15px 
+        & .block-content 
+          padding: 0 0 0 20px
+@media screen and ( max-width: 600px )
+  .contacts 
+    & .contact-wrap
+      padding-left: 0
+      & .form 
+        max-width: 100%
 @media screen and ( max-width: 500px )
   .about
     padding: 150px 0 150px 0
@@ -150,10 +224,20 @@
         & button 
           display: none 
   .benefits
+    padding: 150px 0 100px 0 
     & .benefits-wrap
       & .block 
         grid-template-columns: 1fr 
         grid-row-gap: 30px
+  .contacts 
+    & .contact-wrap
+      & .form 
+        & form 
+          & .input-wrap 
+            grid-template-columns: 1fr 
+            grid-row-gap: 10px 
+            & .input 
+              max-width: 100%
 @media screen and ( max-width: 400px )
   .about
     & .about-wrap

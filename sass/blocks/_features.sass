@@ -1,0 +1,91 @@
+.features
+  background: url(../img/block/bg.png) no-repeat 
+  background-size: cover 
+  background-position: center 
+  padding: 150px 0 90px 0 
+  min-height: 100vh 
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(107.54deg, rgba(23, 26, 28, 0.72) 0%, #5E5E57 100%)
+    opacity: 0.15
+    z-index: 0
+  & .title 
+    position: relative
+    z-index: 5
+    & h4 
+      font-size: 44px 
+  & .features-wrap
+    margin-top: 75px 
+    display: grid 
+    grid-template-columns: repeat(2, 1fr)
+    grid-row-gap: 160px 
+    position: relative
+    z-index: 5
+    margin-left: 25px 
+    &::before
+      content: ''
+      position: absolute
+      width: 670px
+      height: 200px
+      top: 20%
+      left: 50%
+      transform: translateX(-50%)
+      background: url(../img/features/1.png) no-repeat 
+      background-position: center 
+    & .block 
+      max-width: 280px 
+      position: relative
+      & h5 
+        +ub_bold 
+        font-size: 21px 
+      & p 
+        margin-top: 10px 
+        line-height: 130%
+      &:nth-child(1)
+        &::before
+          content: ''
+          position: absolute
+          top: 10px
+          right: -140px
+          width: 230px
+          height: 115px
+          background: url(../img/features/line1.svg) no-repeat 
+          background-position: 0 0 
+      &:nth-child(2)
+        justify-self: end 
+        &::before
+          content: ''
+          position: absolute
+          top: 10px
+          left: -245px
+          width: 230px
+          height: 105px
+          background: url(../img/features/line2.svg) no-repeat 
+          background-position: 0 0 
+      &:nth-child(3)
+        &::before
+          content: ''
+          position: absolute
+          top: -70px
+          right: -282px
+          width: 350px
+          height: 85px
+          background: url(../img/features/line3.svg) no-repeat 
+          background-position: 0 0 
+      &:nth-child(4)
+        justify-self: end 
+        &::before
+          content: ''
+          position: absolute
+          top: -75px
+          left: -145px
+          width: 125px
+          height: 90px
+          background: url(../img/features/line4.svg) no-repeat 
+          background-position: 0 0 
